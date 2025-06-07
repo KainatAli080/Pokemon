@@ -11,15 +11,15 @@ int if_Else_Pokemon_Choosing(int choice)
     // Implementation using If-else statements
     if (choice == 1)
     {
-        cout << "\nProfessor Oak: You chose Bulbasuar! A wise choice. \n";
+        cout << "\nProfessor Oak: A fine choice! Bulbasaur is always ready to grow on you! \n";
     }
     else if (choice == 2)
     {
-        cout << "\nProfessor Oak: You chose Charmander! A fiery choice. \n";
+        cout << "\nProfessor Oak: A fiery choice! Charmander is yours!\n";
     }
     else if (choice == 3)
     {
-        cout << "\nProfessor Oak: You chose Squirtle! A cool choice. \n";
+        cout << "\nProfessor Oak: Splendid! Squirtle will keep you cool under pressure! \n";
     }
     else
     {
@@ -39,24 +39,23 @@ int switch_Pokemon_Choosing(int choice)
     {
         case 1:
         {
-            cout << "\nProfessor Oak: You chose Bulbasuar! A wise choice. \n";
+            cout << "\nProfessor Oak: A fine choice! Bulbasaur is always ready to grow on you! \n";
             break;
         }
         case 2:
         {
-            cout << "\nProfessor Oak: You chose Charmander! A fiery choice. \n";
+            cout << "\nProfessor Oak: A fiery choice! Charmander is yours! \n";
             break;
         }
         case 3:
         {
-            cout << "\nProfessor Oak: You chose Squirtle! A cool choice. \n";
+            cout << "\nProfessor Oak: Splendid! Squirtle will keep you cool under pressure! \n";
             break;
         }
         default:
         {
-            cout << "\nProfessor Oak: Based on your input, I believe it's safe to assume that you do NOT want any of the choices I've provided.\n";
-            cout << "Professor Oak: Goodbye and Good day.\n\n\n";
-            return 1;
+            cout << "\nProfessor Oak: Hmm, that doesn't seem right. Let me choose for you… Just kidding! Let's go with Pikachu, the surprise guest!\n";
+            break;
         }
     }
     return 0;
@@ -76,8 +75,8 @@ int main() {
     cout << "\n";
 
     // Meeting Professor Oak
-    cout << "Professor Oak: Ah, a Trainer. Hi, " << player_name << "! \nWelcome to the world of POKEMON!My name is Professor Oak. \n";
-    cout << "Today is a momentous day -- I will be helping you choose your first Pokemon.\nEvery great Trainer remembers this day for the rest of their lives.\n";
+    cout << "Professor Oak: Ah, a Trainer. Hi, " << player_name << "! Welcome to the world of POKEMON!My name is Professor Oak. \n";
+    cout << "Today is a momentous day -- I will be helping you choose your first Pokemon. Every great Trainer remembers this day for the rest of their lives.\n";
     cout << "I give you three choices to choose from. So, choose wisely, young one. Your options are: ";
     cout << "\n\t1. Bulbasaur\n\t2. Charmander\n\t3. Squirtle\n";
     cout << "Which one would you like? \n\n";
@@ -99,7 +98,7 @@ int main() {
         return 0;
     
 
-    cout << "And an excellent one. But beware, Trainer, for this is only the beginning.\nYour journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
+    cout << "But beware, Trainer, for this is only the beginning. Your journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
     cout << "Good luck, and remember... Choose wisely!\n\n";
 
     return 0;
