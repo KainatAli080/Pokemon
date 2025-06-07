@@ -1,6 +1,71 @@
 #include <iostream>
 using namespace std;
 
+// -------------------------------------------------------------------------------------------- //
+// ----------------------------------  FUNCTIONS STARTS HERE  --------------------------------- //
+// -------------------------------------------------------------------------------------------- //
+
+// if-else allow to test values against specific conditions and blocks
+int if_Else_Pokemon_Choosing(int choice)
+{
+    // Implementation using If-else statements
+    if (choice == 1)
+    {
+        cout << "\nProfessor Oak: You chose Bulbasuar! A wise choice. \n";
+    }
+    else if (choice == 2)
+    {
+        cout << "\nProfessor Oak: You chose Charmander! A fiery choice. \n";
+    }
+    else if (choice == 3)
+    {
+        cout << "\nProfessor Oak: You chose Squirtle! A cool choice. \n";
+    }
+    else
+    {
+        cout << "\nProfessor Oak: Based on your input, I believe it's safe to assume that you do NOT want any of the choices I've provided.\n";
+        cout << "Professor Oak: Goodbye and Good day.\n\n\n";
+        return 1;
+    }
+    return 0;
+}
+
+// Compared to if-else, switch statements are clear and make code more readable
+// It is a cleaner and readable way to replace if-else conditions and helps de-cluttering the code.
+int switch_Pokemon_Choosing(int choice)
+{
+    // Implementation using Switch statements
+    switch (choice)
+    {
+        case 1:
+        {
+            cout << "\nProfessor Oak: You chose Bulbasuar! A wise choice. \n";
+            break;
+        }
+        case 2:
+        {
+            cout << "\nProfessor Oak: You chose Charmander! A fiery choice. \n";
+            break;
+        }
+        case 3:
+        {
+            cout << "\nProfessor Oak: You chose Squirtle! A cool choice. \n";
+            break;
+        }
+        default:
+        {
+            cout << "\nProfessor Oak: Based on your input, I believe it's safe to assume that you do NOT want any of the choices I've provided.\n";
+            cout << "Professor Oak: Goodbye and Good day.\n\n\n";
+            return 1;
+        }
+    }
+    return 0;
+}
+
+// -------------------------------------------------------------------------------------------- //
+// ------------------------------------  MAIN STARTS HERE  ------------------------------------ //
+// -------------------------------------------------------------------------------------------- //
+
 int main() {
     
     // Player Game Start Code
@@ -21,27 +86,21 @@ int main() {
     cout << player_name << ": ";
     cin >> choice;
 
-    if (choice == 1)
-    {
-        cout << "\nProfessor Oak: You chose Bulbasuar! A wise choice. \n";
-    }
-    else if (choice == 2)
-    {
-        cout << "\nProfessor Oak: You chose Charmander! A fiery choice. \n";
-    }
-    else if (choice == 3)
-    {
-        cout << "\nProfessor Oak: You chose Squirtle! A cool choice. \n";
-    }
-    else
-    {
-        cout << "\nProfessor Oak: Based on your input, I believe it's safe to assume that you do NOT want any of the choices I've provided.\n";
-        cout << "Professor Oak: Goodbye and Good day.\n\n\n";
+    int function_returned = 0;
+
+    // Function if we want to select pokemon using if-else
+    //function_returned = if_Else_Pokemon_Choosing(choice);
+    
+    // Function for if we want choose Pokemon using switch statements 
+    function_returned = switch_Pokemon_Choosing(choice);
+
+    // Stopping code execution if invalid input
+    if (function_returned != 0)
         return 0;
-    }
+    
 
     cout << "And an excellent one. But beware, Trainer, for this is only the beginning.\nYour journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
-    cout << "Good luck, and remember... Choose wisely!\n";
+    cout << "Good luck, and remember... Choose wisely!\n\n";
 
     return 0;
 }
