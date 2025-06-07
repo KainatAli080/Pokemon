@@ -2,8 +2,51 @@
 using namespace std;
 
 // -------------------------------------------------------------------------------------------- //
-// ----------------------------------  FUNCTIONS STARTS HERE  --------------------------------- //
+// ------------------------------  FEATURE 1 POKEMON SELECTION  ------------------------------- //
 // -------------------------------------------------------------------------------------------- //
+
+
+// ENUM structure
+enum PokemonChoice {    
+    Bulbasaur,
+    Charmander,
+    Squirtle,
+    InvalidChoice
+};
+
+// Selecting Pokemon using enums
+PokemonChoice enum_Pokemon_Choosing(PokemonChoice pokemonAssignedHere, int choice)
+{
+    // Implementation using Switch statements
+    switch (choice)
+    {
+        case 1:
+        {
+            pokemonAssignedHere = Bulbasaur;
+            cout << "\nProfessor Oak: A fine choice! Bulbasaur is always ready to grow on you! \n";
+            break;
+        }
+        case 2:
+        {
+            pokemonAssignedHere = Charmander;
+            cout << "\nProfessor Oak: A fiery choice! Charmander is yours! \n";
+            break;
+        }
+        case 3:
+        {
+            pokemonAssignedHere = Squirtle;
+            cout << "\nProfessor Oak: Splendid! Squirtle will keep you cool under pressure! \n";
+            break;
+        }
+        default:
+        {
+            pokemonAssignedHere = Charmander;
+            cout << "\nProfessor Oak: Hmm, that doesn't seem right. Let me choose for you… Charmander seems to be perfect for you. A fiery beast!\n";
+            break;
+        }
+    }
+    return pokemonAssignedHere;
+}
 
 // if-else allow to test values against specific conditions and blocks
 int if_Else_Pokemon_Choosing(int choice)
@@ -68,7 +111,7 @@ int switch_Pokemon_Choosing(int choice)
 int main() {
     
     // Player Game Start Code
-    string player_name;
+    string player_name;    
 
     cout << "\nEnter your name: ";
     cin >> player_name;
@@ -91,7 +134,12 @@ int main() {
     //function_returned = if_Else_Pokemon_Choosing(choice);
     
     // Function for if we want choose Pokemon using switch statements 
-    function_returned = switch_Pokemon_Choosing(choice);
+    //function_returned = switch_Pokemon_Choosing(choice);
+
+    // Function for choosing Pokemon using an Enum
+    // Setting it to Invalid Choice initially for surprise pokemon assignment
+    PokemonChoice player_choice = InvalidChoice;
+    player_choice = enum_Pokemon_Choosing(player_choice, choice);
 
     // Stopping code execution if invalid input
     if (function_returned != 0)
