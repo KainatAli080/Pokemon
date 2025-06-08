@@ -4,10 +4,9 @@ using namespace std;
 // -------------------------------------------------------------------------------------------- //
 // ------------------------------  FEATURE 1 POKEMON SELECTION  ------------------------------- //
 // -------------------------------------------------------------------------------------------- //
-
-
-// ENUM structure
-enum PokemonChoice {    
+// 
+// ENUM CLASS structure intro
+enum class PokemonChoice {    
     Bulbasaur,
     Charmander,
     Squirtle,
@@ -15,35 +14,79 @@ enum PokemonChoice {
 };
 
 // Selecting Pokemon using enums
-PokemonChoice enum_Pokemon_Choosing(PokemonChoice pokemonAssignedHere, int choice)
+PokemonChoice enum_Class_Pokemon_Choosing(PokemonChoice pokemonAssignedHere, int choice)
 {
     // Implementation using Switch statements
     switch (choice)
     {
         case 1:
         {
-            pokemonAssignedHere = Bulbasaur;
+            pokemonAssignedHere = PokemonChoice::Bulbasaur;
             cout << "\nProfessor Oak: A fine choice! Bulbasaur is always ready to grow on you! \n";
             break;
         }
         case 2:
         {
-            pokemonAssignedHere = Charmander;
+            pokemonAssignedHere = PokemonChoice::Charmander;
             cout << "\nProfessor Oak: A fiery choice! Charmander is yours! \n";
             break;
         }
         case 3:
         {
-            pokemonAssignedHere = Squirtle;
+            pokemonAssignedHere = PokemonChoice::Squirtle;
             cout << "\nProfessor Oak: Splendid! Squirtle will keep you cool under pressure! \n";
             break;
         }
         default:
         {
-            pokemonAssignedHere = Charmander;
+            pokemonAssignedHere = PokemonChoice::Charmander;
             cout << "\nProfessor Oak: Hmm, that doesn't seem right. Let me choose for you… Charmander seems to be perfect for you. A fiery beast!\n";
             break;
         }
+    }
+    return pokemonAssignedHere;
+}
+
+
+//// ENUM structure
+enum PokemonChoiceEnum {    
+    Bulbasaur,
+    Charmander,
+    Squirtle,
+    InvalidChoice
+};
+
+
+// Selecting Pokemon using enums
+PokemonChoiceEnum enum_Pokemon_Choosing(PokemonChoiceEnum pokemonAssignedHere, int choice)
+{
+    // Implementation using Switch statements
+    switch (choice)
+    {
+    case 1:
+    {
+        pokemonAssignedHere = Bulbasaur;
+        cout << "\nProfessor Oak: A fine choice! Bulbasaur is always ready to grow on you! \n";
+        break;
+    }
+    case 2:
+    {
+        pokemonAssignedHere = Charmander;
+        cout << "\nProfessor Oak: A fiery choice! Charmander is yours! \n";
+        break;
+    }
+    case 3:
+    {
+        pokemonAssignedHere = Squirtle;
+        cout << "\nProfessor Oak: Splendid! Squirtle will keep you cool under pressure! \n";
+        break;
+    }
+    default:
+    {
+        pokemonAssignedHere = Charmander;
+        cout << "\nProfessor Oak: Hmm, that doesn't seem right. Let me choose for you… Charmander seems to be perfect for you. A fiery beast!\n";
+        break;
+    }
     }
     return pokemonAssignedHere;
 }
@@ -138,17 +181,22 @@ int main() {
 
     // Function for choosing Pokemon using an Enum
     // Setting it to Invalid Choice initially for surprise pokemon assignment
-    PokemonChoice player_choice = InvalidChoice;
-    player_choice = enum_Pokemon_Choosing(player_choice, choice);
+    //PokemonChoiceEnum player_choice = InvalidChoice;
+    //player_choice = enum_Pokemon_Choosing(player_choice, choice);
+
+    // Function for choosing Pokemon using an Enum Class
+    // Setting it to Invalid Choice initially for surprise pokemon assignment
+    PokemonChoice player_choice_enumclass = PokemonChoice::InvalidChoice;
+    player_choice_enumclass = enum_Class_Pokemon_Choosing(player_choice_enumclass, choice);
 
     // Stopping code execution if invalid input
     if (function_returned != 0)
         return 0;
     
 
-    cout << "Beware, Trainer, for this is only the beginning. Your journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
-    cout << "Good luck, and Choose wisely. Remember, Trainer, you and your Pokémon are about to form an unstoppable bond!\n";
-    cout << "Now, take your first step into the vast world of Pokémon…\n" << "Who knows what mysteries await you? ;D\n\n"
+    cout << "\nProfessor Oak: Beware, Trainer, for this is only the beginning. Your journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
+    cout << "Good luck, and Choose wisely. Remember, Trainer, you and your Pokemon are about to form an unstoppable bond!\n";
+    cout << "Now, take your first step into the vast world of Pokemon…\n" << "Who knows what mysteries await you? ;D\n\n";
 
     return 0;
 }
