@@ -146,8 +146,9 @@ int main() {
         return 0;
     
 
-    cout << "But beware, Trainer, for this is only the beginning. Your journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
-    cout << "Good luck, and remember... Choose wisely!\n\n";
+    cout << "Beware, Trainer, for this is only the beginning. Your journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
+    cout << "Good luck, and Choose wisely. Remember, Trainer, you and your Pokémon are about to form an unstoppable bond!\n";
+    cout << "Now, take your first step into the vast world of Pokémon…\n" << "Who knows what mysteries await you? ;D\n\n"
 
     return 0;
 }
