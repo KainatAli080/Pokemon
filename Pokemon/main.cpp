@@ -127,7 +127,7 @@ int main() {
     professorOak.offerPokemonChoices(player);
 
     // Conclusion
-    cout << "\nProfessor Oak: Beware, Trainer, for this is only the beginning. Your journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
+    cout << "\n\nProfessor Oak: Beware, Trainer, for this is only the beginning. Your journey is about to unfold. Now let's see if you've got what it takes to keep going.\n";
     cout << "Good luck, and Choose wisely. Remember, Trainer, you and your Pokemon are about to form an unstoppable bond!\n";
     cout << "Now, take your first step into the vast world of Pokemon…\n" << "Who knows what mysteries await you? ;D\n\n";
 
